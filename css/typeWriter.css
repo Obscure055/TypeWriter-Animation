@@ -1,0 +1,64 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');*/
+
+:root {
+	--background-color: rgb(250, 248, 214);
+	--typewriter-speed: 4s;
+	--typewriter-step: 50;
+}
+
+.typeWriter {
+	font-family: 'Share Tech Mono', monospace;
+	font-size: 1.5em;
+	color: rgb(0, 0, 0);
+	/* text-shadow: 0 0 0.1em rgb(0, 0, 0); */
+	text-align: center;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.typeWriter-text {
+	font-family: 'Share Tech Mono', monospace;
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+	width: fit-content;
+}
+
+.typeWriter-text::before,
+.typeWriter-text::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.typeWriter-text::before {
+	background-color: var(--background-color);
+	animation: typewriter var(--typewriter-speed) steps(var(--typewriter-step), end) forwards;
+	min-height: 35px;
+	max-height: 45px;
+}
+
+.typeWriter-text::after {
+	width: 0.125em;
+	background-color: black;
+	animation: typewriter var(--typewriter-speed) steps(var(--typewriter-step), end) forwards, blink var(--typewriter-speed) steps(var(--typewriter-step), end) forwards;
+	min-height: 35px;
+	max-height: 45px;
+}
+
+@keyframes typewriter {
+	to {
+		left: 100%;
+	}
+}
+
+@keyframes blink {
+	to {
+		background: transparent;
+	}
+}
+
+
